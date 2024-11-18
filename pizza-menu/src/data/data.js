@@ -1,4 +1,4 @@
-export const pizzas = [
+const pizzas = [
   {
     "id": 1,
     "name": "Margherita",
@@ -241,3 +241,5 @@ export const pizzas = [
     "soldOut": false
   }
 ];
+
+export default pizzas;
