@@ -1,3 +1,5 @@
+import Button from "./Button";
+
 const PizzaItem = ({ pizza }) => {
     return (
       <div className="pizza-item">
@@ -15,7 +17,7 @@ const PizzaItem = ({ pizza }) => {
             <p className="price">€{pizza.unitPrice.toFixed(2)}</p>
           )}
         </div>
-        {!pizza.soldOut && <button className="add-to-cart">ADD TO CART</button>}
+        {!pizza.soldOut && <Button className="add-to-cart" buttonName="ADD TO CART"/>}
       </div>
     );
   }
