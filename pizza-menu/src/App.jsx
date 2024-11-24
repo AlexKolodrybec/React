@@ -1,12 +1,13 @@
 import Menu from "./components/Menu";
 import Header from "./components/Header";
-import Input from "./components/Input";
+import LoginForm from "./components/LoginForm";
 
 function App() {
     return (
         <div>
             <Header username="ALEX"/>
             <Menu />
+            <LoginForm/>
         </div>
     );
 }

@@ -1,6 +1,7 @@
 import pizzas from '../data/data';
 import PizzaItem from './PizzaItem';
 
+
 const Menu = () => {
   return (
     <div className="menu-container">
@@ -8,6 +9,7 @@ const Menu = () => {
         <PizzaItem key={pizza.id} pizza={pizza} />
       ))}
     </div>
+    
   );
 }
 
