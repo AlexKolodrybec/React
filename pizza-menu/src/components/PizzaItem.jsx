@@ -1,6 +1,19 @@
+import { useState } from 'react';
 import CartControl from './CartControl';
 
 const PizzaItem = ({ pizza }) => {
+  const [count, setCount] = useState(0);
+
+  const handleIncrement = () => {
+    setCount(count + 1);
+  };
+
+  const handleDecrement = () => {
+    if (count > 0) {
+      setCount(count - 1);
+    }
+  };
+
   return (
     <div className="pizza-item">
       <img
@@ -17,7 +30,12 @@ const PizzaItem = ({ pizza }) => {
           <p className="price">€{pizza.unitPrice.toFixed(2)}</p>
         )}
       </div>
-      <CartControl isSoldOut={pizza.soldOut} />
+      <CartControl
+        isSoldOut={pizza.soldOut}
+        count={count}
+        onIncrement={handleIncrement}
+        onDecrement={handleDecrement}
+      />
     </div>
   );
 };

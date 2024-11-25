@@ -1,45 +1,29 @@
-import { useState } from 'react';
+import Button from './Button';
 
-const CartControl = ({ isSoldOut }) => {
-  const [isInCart, setIsInCart] = useState(false);
-  const [count, setCount] = useState(1);
-
-  const handleAddToCart = () => {
-    if (!isSoldOut) {
-      setIsInCart(true);
-    }
-  };
-
-  const handleDecrement = () => {
-    if (count > 1) {
-      setCount(count - 1);
-    } else {
-      setIsInCart(false);
-      setCount(1);
-    }
-  };
-
-  const handleIncrement = () => {
-    setCount(count + 1);
-  };
-
+const CartControl = ({ isSoldOut, count, onIncrement, onDecrement }) => {
   return (
     <div className="cart-controls">
       {isSoldOut ? (
         <span className="sold-out">SOLD OUT</span>
-      ) : !isInCart ? (
-        <button className="add-to-cart" onClick={handleAddToCart}>
-          Add to Cart
-        </button>
+      ) : count === 0 ? (
+        <Button
+          className="add-to-cart"
+          onClick={onIncrement}
+          buttonText="Add to Cart"
+        />
       ) : (
         <div className="counter">
-          <button className="decrement" onClick={handleDecrement}>
-            -
-          </button>
+          <Button
+            className="decrement"
+            onClick={onDecrement}
+            buttonText="-"
+          />
           <span>{count}</span>
-          <button className="increment" onClick={handleIncrement}>
-            +
-          </button>
+          <Button
+            className="increment"
+            onClick={onIncrement}
+            buttonText="+"
+          />
         </div>
       )}
     </div>

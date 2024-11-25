@@ -1,12 +1,12 @@
-const Input = ( props ) => {
-    const { text, placeholder, ariaLabel } = props;
-    return (
-        <input
-            type={text}
-            placeholder={placeholder}
-            aria-label={ariaLabel}
-        />
-    );
+const Input = ({ text, value, onChange, placeholder }) => {
+  return (
+    <input
+      type={text}
+      value={value}
+      onChange={onChange}
+      placeholder={placeholder}
+    />
+  );
 };
 
 export default Input;
