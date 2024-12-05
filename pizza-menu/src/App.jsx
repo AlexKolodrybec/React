@@ -1,13 +1,12 @@
-import Header from "./components/Header";
-import Cart from "./components/Cart";
+import React from 'react';
+import Menu from './components/Menu';
 
-function App() {
-    return (
-        <div>
-            <Header username="ALEX"/>
-            <Cart />
-        </div>
-    );
-}
+const App = () => {
+  return (
+    <div>
+      <Menu />
+    </div>
+  );
+};
 
 export default App;
