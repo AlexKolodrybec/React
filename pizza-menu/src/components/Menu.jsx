@@ -30,10 +30,12 @@ const Menu = () => {
   if (error) return <div>Error: {error}</div>;
 
   return (
-    <div>
-      {menuItems.map(({ id, name }) => (
-        <div key={id} className="menu-item">
-          <h2>{name}</h2>
+    <div className="menu">
+      {menuItems.map((item) => (
+        <div key={item.id} className="menu-item">
+          <h2>{item.name || 'Unnamed'}</h2>
+          <p>{item.ingredients ? item.ingredients.join(', ') : 'No description available'}</p>
+          <p>{item.unitPrice ? `€${item.unitPrice.toFixed(2)}` : 'Price not available'}</p>
         </div>
       ))}
     </div>
