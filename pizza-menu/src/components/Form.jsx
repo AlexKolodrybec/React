@@ -1,26 +1,31 @@
-import { useState } from 'react';
-import Input from './Input';
-import Button from './Button';
+import { useContext, useState } from 'react';
+import { UserContext } from '../UserContext';
+import { useNavigate } from 'react-router-dom';
 
-const Form = ({ titleText, subtitleText, welcomeText }) => {
-  const [inputValue, setInputValue] = useState('');
+const Form = () => {
+  const { setUsername } = useContext(UserContext); 
+  const [inputValue, setInputValue] = useState("");
+  const navigate = useNavigate();
 
-  const handleInputChange = (e) => {
-    setInputValue(e.target.value); 
-  };
-
-  const handleButtonClick = () => {
-    console.log("Name:", inputValue); 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setUsername(inputValue); 
+    navigate('/menu'); 
   };
 
   return (
-    <main>
-      <h1>{titleText}</h1>
-      <p className="subtitle">{subtitleText}</p>
-      <p className="welcome">👉 {welcomeText}</p>
-      <Input type="text" value={inputValue} onChange={handleInputChange} placeholder={"Enter your name"} />
-      <Button className="btn" buttonText="Submit" onClick={handleButtonClick} />
-    </main>
+    <form onSubmit={handleSubmit}>
+      <label>
+        Введіть ваше ім'я:
+        <input
+          type="text"
+          value={inputValue}
+          onChange={(e) => setInputValue(e.target.value)}
+          required
+        />
+      </label>
+      <button type="submit">Підтвердити</button>
+    </form>
   );
 };
 
