@@ -1,18 +1,20 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Header from './components/Header';
-import Main from './pages/Main';
-import Menu from './pages/Menu'; 
-import Cart from './pages/Cart';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Menu from "./pages/Menu";
+import OrderForm from "./pages/OrderForm";
+import OrderStatus from "./pages/OrderStatus";
+import Header from "./components/Header";
 
 const App = () => {
   return (
     <Router>
       <Header />
       <Routes>
-        <Route path="/" element={<Main />} />
+        <Route path="/" element={<Home />} />
         <Route path="/menu" element={<Menu />} />
-        <Route path="/cart" element={<Cart />} />
+        <Route path="/orders/new" element={<OrderForm />} />
+        <Route path="/orders/:id" element={<OrderStatus />} />
       </Routes>
     </Router>
   );

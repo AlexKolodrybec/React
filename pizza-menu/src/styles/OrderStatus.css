@@ -1,0 +1,42 @@
+.order-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .badges {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .badge {
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-weight: bold;
+    color: white;
+  }
+  
+  .badge-priority {
+    background-color: #dc3545;
+  }
+  
+  .badge-preparing {
+    background-color: #28a745;
+  }
+  
+  .time-banner {
+    background-color: #f0f0f0;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+  }
+  
+  .pizza-item {
+    margin-bottom: 1rem;
+  }
+  
+  .price-breakdown {
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+  }
+  
